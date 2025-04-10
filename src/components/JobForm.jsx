@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const apiUrl = import.meta.env.VITE_API_URL;
+
 
 const initialState = {
   company: '',
@@ -26,10 +28,10 @@ const JobForm = ({ fetchJobs, editJob, clearEdit }) => {
     e.preventDefault();
     try {
       if (editJob) {
-        await axios.put(`http://localhost:5000/api/jobs/${editJob._id}`, job);
+        await axios.put(`${apiUrl}/api/jobs/${editJob._id}`, job);
         clearEdit();
       } else {
-        await axios.post('http://localhost:5000/api/jobs', job);
+        await axios.post(`${apiUrl}/api/jobs`, job);
       }
       setJob(initialState);
       fetchJobs();
