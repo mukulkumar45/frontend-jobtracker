@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const JobList = ({ onEdit }) => {
   const [jobs, setJobs] = useState([]);
@@ -16,7 +17,7 @@ const JobList = ({ onEdit }) => {
         params.date = dateFilter;
       }
   
-      const res = await axios.get('http://localhost:5000/api/jobs', { params });
+      const res = await axios.get(`${apiUrl}/api/jobs`, { params });
       setJobs(res.data);
     } catch (err) {
       console.error('Error fetching jobs', err);
@@ -36,7 +37,7 @@ const JobList = ({ onEdit }) => {
 
   const deleteJob = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+      await axios.delete(`${apiUrl}/api/jobs/${id}`);
       fetchJobs();
     } catch (error) {
       console.error('Error deleting job:', error);
