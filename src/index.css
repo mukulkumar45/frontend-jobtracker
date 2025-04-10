@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f8ff;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3a3d98;
+}
+
+form {
+  background: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+}
+
+form button {
+  background-color: #3a3d98;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #2c2e80;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.job-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-card h3 {
+  margin: 0;
+  color: #3a3d98;
+}
+
+.job-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+}
+
+.status.Applied {
+  background-color: #e0f0ff;
+  color: #0077cc;
+}
+
+.status.Interview {
+  background-color: #fff6db;
+  color: #e6a100;
+}
+
+.status.Offer {
+  background-color: #dcfce7;
+  color: #007f5f;
+}
+
+.status.Rejected {
+  background-color: #ffe4e4;
+  color: #cc0000;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.card-buttons button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.card-buttons .edit {
+  background-color: #e0e4ff;
+  color: #3a3d98;
+}
+
+.card-buttons .delete {
+  background-color: #ffdddd;
+  color: #b30000;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
